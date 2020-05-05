@@ -7,7 +7,8 @@
 <title>Thank God :) </title>
 </head>
 <body>
-!!! Great we are inside a JEE application !!! 
-Congradulations ${name}
+<form action="/login.do" method="post" >
+	Please enter your name <input type="text" name="name"/> <input type="submit" value="Login"/>
+</form>
 </body>
 </html>
