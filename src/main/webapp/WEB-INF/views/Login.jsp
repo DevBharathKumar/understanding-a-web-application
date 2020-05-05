@@ -9,11 +9,5 @@
 <body>
 !!! Great we are inside a JEE application !!! 
 Congradulations ${name}
-<%
-  for(int i=0;i<3;i++)
-  {
-	  System.out.println(request.getParameter("name"));
-  }
-%>
 </body>
 </html>
