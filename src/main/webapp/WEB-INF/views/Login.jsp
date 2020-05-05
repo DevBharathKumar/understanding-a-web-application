@@ -7,6 +7,7 @@
 <title>Thank God :) </title>
 </head>
 <body>
-!!! Great we are inside a JEE application !!
+!!! Great we are inside a JEE application !!! 
+Congradulations ${name} <!-- ${} is called as the expression lanuage -->
 </body>
 </html>

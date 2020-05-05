@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
+		
+		//For getting request from the browser
+		String requestName = request.getParameter("name");
+		
+		//For setting the data to be used in the JSP
+		request.setAttribute("name", requestName);
+		
 		request.getRequestDispatcher("/WEB-INF/views/Login.jsp").forward(request, response);
 	}
 
