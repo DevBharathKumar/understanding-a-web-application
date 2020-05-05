@@ -8,6 +8,12 @@
 </head>
 <body>
 !!! Great we are inside a JEE application !!! 
-Congradulations ${name} <!-- ${} is called as the expression lanuage -->
+Congradulations ${name}
+<%
+  for(int i=0;i<3;i++)
+  {
+	  System.out.println(request.getParameter("name"));
+  }
+%>
 </body>
 </html>
