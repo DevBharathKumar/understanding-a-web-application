@@ -8,7 +8,10 @@
 </head>
 <body>
 <form action="/login.do" method="post" >
-	Please enter your name <input type="text" name="name"/> <input type="submit" value="Login"/>
+	<font color=red>${error}</font>
+	<h2>Please enter your name <input type="text" name="name"/> </h2>
+	<h2>Please enter your password  <input type="password" name="password"/> </h2>
+	<input type="submit" value="Login"/>
 </form>
 </body>
 </html>

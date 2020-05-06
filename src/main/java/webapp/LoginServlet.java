@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns="/login.do")
 public class LoginServlet extends HttpServlet{
 	
+	UserValidationService userService = new UserValidationService();
+	
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
 	{
 		request.getRequestDispatcher("/WEB-INF/views/Login.jsp").forward(request, response);
@@ -18,8 +20,13 @@ public class LoginServlet extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
 	{
-		request.setAttribute("name", request.getParameter("name"));
-		request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+		if(userService.isValidUser(request.getParameter("name"), request.getParameter("password"))) {
+			request.setAttribute("name", request.getParameter("name"));
+			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+		}else {
+			request.setAttribute("error", "Sorry Invalid Credentials. Please try again :( ");
+			request.getRequestDispatcher("/WEB-INF/views/Login.jsp").forward(request, response);
+		}
 	}
 
 }
