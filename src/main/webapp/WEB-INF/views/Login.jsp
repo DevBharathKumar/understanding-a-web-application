@@ -7,7 +7,7 @@
 <title>Thank God :) </title>
 </head>
 <body>
-<form action="/login.do" method="post" >
+<form action="/spring-mvc/login" method="post" >
 	<font color=red>${error}</font>
 	<h2>Please enter your name <input type="text" name="name"/> </h2>
 	<h2>Please enter your password  <input type="password" name="password"/> </h2>
